@@ -7,11 +7,15 @@ poolData:
           stakeContractAddress: "0x45c54210128a065de780C4B0Df3d16664f7f859e"
           stakeTokenAddress: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82"
           rewardTokenAddress: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82"
+          endBlock: "nil"
+          isLive: true
   
         - poolName: "antex"
           stakeContractAddress: "0xdC37A2B2A6a62008beEe029E36153dF8055a8ADa"
           stakeTokenAddress: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82"
           rewardTokenAddress: "0xCA1aCAB14e85F30996aC83c64fF93Ded7586977C"
+          endBlock: "bonusEndBlock"
+          isLive: true
   
         # - poolName: "xcn"
         #   stakeContractAddress: "0xa79D37ce9DF9443eF4B6DEC2e38a8ecd35303adc"
@@ -22,22 +26,37 @@ poolData:
           stakeContractAddress: "0x2D17ec6cd0AF737B2adE40ea527d41ceEedc166f"
           stakeTokenAddress: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82"
           rewardTokenAddress: "0xf9CeC8d50f6c8ad3Fb6dcCEC577e05aA32B224FE"
+          endBlock: "bonusEndBlock"
+          isLive: false
   
         - poolName: "mix"
           stakeContractAddress: "0x0F96E19Bdc787e767BA1e8F1aDD0f62cbdad87C8"
           stakeTokenAddress: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82"
           rewardTokenAddress: "0x398f7827DcCbeFe6990478876bBF3612D93baF05"
+          endBlock: "bonusEndBlock"
+          isLive: true
         
         - poolName: "gal"
           stakeContractAddress: "0xa5D57C5dca083a7051797920c78fb2b19564176B"
           stakeTokenAddress: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82"
           rewardTokenAddress: "0xe4Cc45Bb5DBDA06dB6183E8bf016569f40497Aa5"
+          endBlock: "bonusEndBlock"
+          isLive: true
   
-    # - protocolName: "apeswap"
-    #   chainName: "binance"
-    #   rpc: "https://bsc-dataseed.binance.org/"
-    #   pools:
-    #     - poolName: "gnana"
-    #       stakeContractAddress: "0x8F97B2E6559084CFaBA140e2AB4Da9aAF23FE7F8"
-    #       stakeTokenAddress: "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95"
-    #       rewardTokenAddress: "0xdDb3Bd8645775F59496c821E4F55A7eA6A6dc299"
+    - protocolName: "apeswap"
+      chainName: "binance"
+      rpc: "https://bsc-dataseed.binance.org/"
+      pools:
+        - poolName: "gnana"
+          stakeContractAddress: "0x8F97B2E6559084CFaBA140e2AB4Da9aAF23FE7F8"
+          stakeTokenAddress: "0xdDb3Bd8645775F59496c821E4F55A7eA6A6dc299"
+          rewardTokenAddress: "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95"
+          endBlock: "bonusEndBlock"
+          isLive: true
+        
+        - poolName: "gmr"
+          stakeContractAddress: "0x8966EDA482ca1559cFEa937da58f217fd1F2a468"
+          stakeTokenAddress: "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95"
+          rewardTokenAddress: "0xADCa52302e0a6c2d5D68EDCdB4Ac75DeB5466884"
+          endBlock: "bonusEndBlock"
+          isLive: true

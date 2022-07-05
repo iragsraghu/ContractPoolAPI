@@ -23,34 +23,38 @@ func poolList(c *gin.Context) {
 	var poolData = config.LoadPools().PoolData
 	currPoolData := helpers.PoolData(poolData, inputPools)
 	for _, pools := range currPoolData.Pools {
-		// get abi data from abi file name
-		stake_abi_data, err := ioutil.ReadFile("ABI/" + pools.StakeTokenAddress + ".abi")
-		if err != nil {
-			c.JSON(400, gin.H{
-				"error": pools.StakeTokenAddress + " Error reading abi file",
-			})
-			return
-		}
+		if pools.IsLive {
+			// get abi data from abi file name
+			stake_abi_data, err := ioutil.ReadFile("ABI/" + currPoolData.ProtocolName + "/" + pools.StakeTokenAddress + ".abi")
+			if err != nil {
+				c.JSON(400, gin.H{
+					"error": pools.StakeTokenAddress + " Error reading abi file",
+				})
+				return
+			}
 
-		reward_abi_data, err := ioutil.ReadFile("ABI/" + pools.RewardTokenAddress + ".abi")
-		if err != nil {
-			c.JSON(400, gin.H{
-				"error": pools.RewardTokenAddress + " Error reading abi file",
-			})
-			return
-		}
+			reward_abi_data, err := ioutil.ReadFile("ABI/" + currPoolData.ProtocolName + "/" + pools.RewardTokenAddress + ".abi")
+			if err != nil {
+				c.JSON(400, gin.H{
+					"error": pools.RewardTokenAddress + " Error reading abi file",
+				})
+				return
+			}
 
-		result, err := helpers.GetPoolInfo(c, string(stake_abi_data), string(reward_abi_data), inputPools, pools, currPoolData)
-		if err != nil {
-			c.JSON(400, gin.H{
-				"error": "Error while getting pool info : " + err.Error(),
-			})
-			return
-		}
+			main_contract_abi_data, err := ioutil.ReadFile("ABI/" + currPoolData.ProtocolName + "/" + pools.StakeContractAddress + ".abi")
 
-		c.JSON(200, gin.H{
-			"data": result,
-		})
+			result, errors := helpers.GetPoolInfo(c, string(stake_abi_data), string(reward_abi_data), string(main_contract_abi_data), inputPools, pools, currPoolData)
+			if errors != nil {
+				c.JSON(400, gin.H{
+					"error": "Error while getting pool info : " + err.Error(),
+				})
+				return
+			}
+
+			c.JSON(200, gin.H{
+				"data": result,
+			})
+		}
 
 	}
 }

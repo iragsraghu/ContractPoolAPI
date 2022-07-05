@@ -7,8 +7,8 @@ type InputPools struct {
 }
 
 type OutputPools struct {
-	Stake    string `yaml:"stake"`
-	Get      string `yaml:"get"`
-	Duration string `yaml:"duration"`
-	APR      string `yaml:"apr"`
+	Stake          string `yaml:"stake"`
+	Get            string `yaml:"get"`
+	BlockCountDown string `yaml:"block_count_down"`
+	APR            string `yaml:"apr"`
 }

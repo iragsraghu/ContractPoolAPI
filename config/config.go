@@ -23,6 +23,8 @@ type Pools struct {
 	StakeContractAddress string `yaml:"stake_contract_address"`
 	StakeTokenAddress    string `yaml:"stake_token_address"`
 	RewardTokenAddress   string `yaml:"reward_token_address"`
+	EndBlock             string `yaml:"end_block"`
+	IsLive               bool   `yaml:"is_live"`
 }
 
 func LoadPools() PoolsConfig {
