@@ -11,4 +11,5 @@ type OutputPools struct {
 	Get            string `yaml:"get"`
 	BlockCountDown string `yaml:"block_count_down"`
 	APR            string `yaml:"apr"`
+	TotalStaked    string `yaml:"total_staked"`
 }
