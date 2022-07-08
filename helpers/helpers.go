@@ -1,11 +1,11 @@
 package helpers
 
 import (
-	"ContractPoolAPI/config"
-	"ContractPoolAPI/models"
+	"contract_pool/config"
+	"contract_pool/models"
 	"fmt"
 
-	poolpkg "ContractPoolAPI/pools"
+	poolpkg "contract_pool/pools"
 
 	"github.com/chenzhijie/go-web3"
 	"github.com/gin-gonic/gin"

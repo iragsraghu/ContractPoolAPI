@@ -1,11 +1,11 @@
 package main
 
 import (
-	"ContractPoolAPI/config"
-	"ContractPoolAPI/inputs"
+	"contract_pool/config"
+	"contract_pool/inputs"
 	"io/ioutil"
 
-	"ContractPoolAPI/helpers"
+	"contract_pool/helpers"
 
 	"github.com/gin-gonic/gin"
 )

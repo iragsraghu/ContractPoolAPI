@@ -1,7 +1,7 @@
 package inputs
 
 import (
-	"ContractPoolAPI/models"
+	"contract_pool/models"
 	"fmt"
 
 	"github.com/gin-gonic/gin"

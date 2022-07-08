@@ -1,7 +1,7 @@
 package pools
 
 import (
-	"ContractPoolAPI/config"
+	"contract_pool/config"
 	"fmt"
 	"strconv"
 
